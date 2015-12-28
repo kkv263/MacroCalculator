@@ -28,14 +28,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="US" />
+                android:text="@string/imperial_US" />
 
             <RadioButton
                 android:id="@+id/metric_radio_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Metric" />
+                android:text="@string/metric" />
         </RadioGroup>
 
         <LinearLayout
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingTop="16dp"
-                android:text="Gender"
+                android:text="@string/gender_label"
                 android:textSize="20sp" />
 
             <Spinner
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingTop="16dp"
-                android:text="Age (Years)"
+                android:text="@string/age_label"
                 android:textSize="20sp" />
 
             <EditText
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingTop="16dp"
-                android:text="Weight (lbs)"
+                android:text="@string/weight_label_us"
                 android:textSize="20sp" />
 
             <EditText
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingTop="16dp"
-                android:text="Height (in.)"
+                android:text="@string/height_label_us"
                 android:textSize="20sp" />
 
             <EditText
@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingTop="16dp"
-            android:text="Activity Level"
+            android:text="@string/activity_level_label"
             android:textSize="20sp" />
 
         <Spinner
@@ -145,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingTop="16dp"
-            android:text="Your Goal"
+            android:text="@string/your_goals_label"
             android:textSize="20sp" />
 
         <Spinner
@@ -162,7 +162,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Calculate"
+            android:text="@string/calculate_button"
             android:textAllCaps="false"
 
             />
@@ -172,7 +172,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:text="Recommended Calories"
+            android:text="@string/recommended_label"
             android:textSize="16sp" />
 
 
@@ -194,7 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:text="Use this\n value"
+                android:text="@string/use_this_value_button"
                 android:textAllCaps="false"
 
                 />
@@ -206,7 +206,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:text="(Only calculates a minimum of 1000 calories.)"
+            android:text="@string/minimum_calc"
             android:textSize="12sp" />
 
     </LinearLayout>

@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements FindCaloriesDialo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        hideOnCreate();
         EditText calories = (EditText) findViewById(R.id.calories_needed);
         calories.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -165,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements FindCaloriesDialo
             Toast.makeText(this,"Please enter a valid number to calculate.",Toast.LENGTH_SHORT).show();
         else
             cals = Integer.parseInt(calsStr);
+        makeVisibleAgain();
         showTotalGrams(Utilities.calculcateCarbs(cals, cPercent), Utilities.calculcateProtein(cals, pPercent),
                 Utilities.calculcateFat(cals, fPercent));
 
@@ -177,15 +179,51 @@ public class MainActivity extends AppCompatActivity implements FindCaloriesDialo
 
     }
 
+    private void hideOnCreate() {
+        TextView carbGrams = (TextView) findViewById(R.id.carbs_grams);
+        TextView proteinGrams = (TextView) findViewById(R.id.protein_grams);
+        TextView fatGrams = (TextView) findViewById(R.id.fat_grams);
+        TextView carbsCalc = (TextView) findViewById(R.id.carbs_calculated_text_view);
+        TextView proteinsCalc = (TextView) findViewById(R.id.protein_calculated_text_view);
+        TextView fatsCalc = (TextView) findViewById(R.id.fat_calculated_text_view);
+
+        carbGrams.setVisibility(View.GONE);
+        proteinGrams.setVisibility(View.GONE);
+        fatGrams.setVisibility(View.GONE);
+        carbsCalc.setVisibility(View.GONE);
+        proteinsCalc.setVisibility(View.GONE);
+        fatsCalc.setVisibility(View.GONE);
+
+
+    }
+
+    private void makeVisibleAgain() {
+        TextView carbGrams = (TextView) findViewById(R.id.carbs_grams);
+        TextView proteinGrams = (TextView) findViewById(R.id.protein_grams);
+        TextView fatGrams = (TextView) findViewById(R.id.fat_grams);
+        TextView proteinsCalc = (TextView) findViewById(R.id.protein_calculated_text_view);
+        TextView fatsCalc = (TextView) findViewById(R.id.fat_calculated_text_view);
+        TextView carbsCalc = (TextView) findViewById(R.id.carbs_calculated_text_view);
+
+        carbGrams.setVisibility(View.VISIBLE);
+        proteinGrams.setVisibility(View.VISIBLE);
+        fatGrams.setVisibility(View.VISIBLE);
+        carbsCalc.setVisibility(View.VISIBLE);
+        proteinsCalc.setVisibility(View.VISIBLE);
+        fatsCalc.setVisibility(View.VISIBLE);
+
+
+    }
+
     private void showTotalGrams (int carbs,int proteins, int fats)
     {
         TextView carbGrams = (TextView) findViewById(R.id.carbs_grams);
         TextView proteinGrams = (TextView) findViewById(R.id.protein_grams);
         TextView fatGrams = (TextView) findViewById(R.id.fat_grams);
 
-        carbGrams.setText(Integer.toString(carbs));
-        proteinGrams.setText(Integer.toString(proteins));
-        fatGrams.setText(Integer.toString(fats));
+        carbGrams.setText(Integer.toString(carbs) + " grams");
+        proteinGrams.setText(Integer.toString(proteins) + " grams");
+        fatGrams.setText(Integer.toString(fats) + " grams");
     }
 
     @Override
@@ -194,5 +232,6 @@ public class MainActivity extends AppCompatActivity implements FindCaloriesDialo
         calories.setText(recommendedCalories);
 
     }
+
 
 }

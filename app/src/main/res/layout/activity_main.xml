@@ -21,16 +21,15 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="Presets"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/presets"
             android:textSize="24dp" />
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_weight="1">
 
             <Button
@@ -39,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="PresetButtons"
-                android:text="60/25/15\nHigh Carbs"
+                android:text="@string/preset_button_highCarbs"
                 android:textAllCaps="false" />
 
             <Button
@@ -50,7 +49,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:onClick="PresetButtons"
-                android:text="50/30/20\nModerate"
+                android:text="@string/preset_button_moderate"
                 android:textAllCaps="false" />
 
             <Button
@@ -59,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="PresetButtons"
-                android:text="20/40/40\nLow Carbs"
+                android:text="@string/preset_button_lowCarbs"
                 android:textAllCaps="false" />
         </LinearLayout>
 
@@ -74,25 +73,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Carbohydrates" />
+                android:text="@string/carbohydrates_label" />
 
             <TextView
                 android:id="@+id/carbs_percent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/carbs"
-                android:layout_marginLeft="108dp"
-                android:text="0%" />
-
-            <TextView
-                android:id="@+id/carbs_grams"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/carbs_seekBar"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
-                android:text="0" />
+                android:text="@string/initialize_seekbar_percent" />
+
 
             <SeekBar
                 android:id="@+id/carbs_seekBar"
@@ -111,22 +103,15 @@
                 android:id="@+id/protein"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Protein" />
+                android:text="@string/protein_label" />
 
             <TextView
                 android:id="@+id/protein_percent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="108dp"
-                android:text="0%" />
-
-            <TextView
-                android:id="@+id/protein_grams"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="16dp"
-                android:text="0" />
+                android:text="@string/initialize_seekbar_percent" />
 
             <SeekBar
                 android:id="@+id/protein_seekBar"
@@ -145,22 +130,15 @@
                 android:id="@+id/fat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fat" />
+                android:text="@string/fat_label" />
 
             <TextView
                 android:id="@+id/fat_percent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="108dp"
-                android:text="0%" />
-
-            <TextView
-                android:id="@+id/fat_grams"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="16dp"
-                android:text="0" />
+                android:text="@string/initialize_seekbar_percent" />
 
             <SeekBar
                 android:id="@+id/fats_seekBar"
@@ -169,52 +147,125 @@
                 android:layout_below="@+id/fat" />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginBottom="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="28dp"
-                android:text="Daily Calories:"
-                android:textSize="16dp" />
-
-            <EditText
-                android:id="@+id/calories_needed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="32dp"
                 android:layout_marginTop="32dp"
-                android:ems="6"
-                android:gravity="center_horizontal"
-                android:inputType="number"
-                android:maxLength="5" />
+                android:layout_weight="1">
 
-            <Button
-                android:id="@+id/dont_know_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/calories_needed"
-                android:layout_marginLeft="28dp"
-                android:onClick="dontKnowButton"
-                android:text="Don't Know?"
-                android:textAllCaps="false">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="28dp"
+                    android:text="@string/daily_calories_text"
+                    android:textSize="16dp" />
 
-            </Button>
+                <EditText
+                    android:id="@+id/calories_needed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="32dp"
+                    android:ems="6"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:maxLength="5" />
 
-            <Button
-                android:id="@+id/calculate_button"
-                android:layout_width="150dp"
-                android:layout_height="75dp"
-                android:layout_below="@id/dont_know_button"
-                android:onClick="submitCalories"
-                android:text="Calculate"
-                android:textSize="20dp" />
-        </RelativeLayout>
+                <Button
+                    android:id="@+id/dont_know_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/calories_needed"
+                    android:layout_marginLeft="28dp"
+                    android:onClick="dontKnowButton"
+                    android:text="@string/dont_know_button"
+                    android:textAllCaps="false">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/calculate_button"
+                    android:layout_width="144dp"
+                    android:layout_height="72dp"
+                    android:layout_below="@id/dont_know_button"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="submitCalories"
+                    android:text="@string/calculate_button"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/carbs_calculated_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="36dp"
+                    android:layout_toRightOf="@id/calories_needed"
+                    android:text="@string/carbohydrates_label"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/carbs_grams"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/carbs_calculated_text_view"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/calories_needed"
+                    android:text="@string/zero"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/protein_calculated_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/carbs_grams"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/calories_needed"
+                    android:text="@string/protein_label"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/protein_grams"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/protein_calculated_text_view"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/calories_needed"
+                    android:text="@string/zero"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/fat_calculated_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/protein_grams"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/calories_needed"
+                    android:text="@string/fat_label"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/fat_grams"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fat_calculated_text_view"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/calories_needed"
+                    android:text="@string/zero"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

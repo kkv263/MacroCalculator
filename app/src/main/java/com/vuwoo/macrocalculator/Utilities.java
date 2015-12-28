@@ -7,7 +7,7 @@ public class Utilities
 {
 
     /*These calculateMethods are to calculate the carbs,protein or
-fat with the calories provided
+    fat with the calories provided
  */
     public static int calculcateCarbs (int calories, double carbsPercent)
     {
@@ -22,6 +22,8 @@ fat with the calories provided
         return (int) (calories * (fatPercent/100)) / 9 ;
     }
 
+    /* This method calculates the daily calorie intake based on age, weight, height, your goals, and your activity level. The
+    Revised Harriss Benedict Equation was used for this.*/
 
     public static int calcCalorieIntake(int age, double weight, double height, boolean isImperial, boolean isMale, int activitylevelIndex, int goalIndex) {
         double calories, bmr;

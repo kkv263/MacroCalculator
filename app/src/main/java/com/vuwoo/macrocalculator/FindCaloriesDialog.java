@@ -27,6 +27,10 @@ public class FindCaloriesDialog extends DialogFragment implements View.OnClickLi
 
     int recommendedCalories = 0;
 
+    public FindCaloriesDialog() {
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         getDialog().setTitle("Your Daily Calorie Intake");
@@ -53,12 +57,12 @@ public class FindCaloriesDialog extends DialogFragment implements View.OnClickLi
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.metric_radio_button:
-                        weightEntry.setText("Weight (kgs)");
-                        heightEntry.setText("Height (cm.)");
+                        weightEntry.setText(getString(R.string.weight_label_metric));
+                        heightEntry.setText(getString(R.string.height_label_metric));
                         break;
                     case R.id.US_radio_button:
-                        weightEntry.setText("Weight (lbs)");
-                        heightEntry.setText("Height (in.)");
+                        weightEntry.setText(getString(R.string.weight_label_us));
+                        heightEntry.setText(getString(R.string.height_label_us));
                 }
             }
         });
