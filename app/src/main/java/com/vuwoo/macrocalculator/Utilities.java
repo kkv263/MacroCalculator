@@ -1,12 +1,5 @@
 package com.vuwoo.macrocalculator;
 
-import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
-import android.widget.SeekBar;
-
 /**
  * Created by spran on 12/25/2015.
  */
@@ -29,5 +22,22 @@ fat with the calories provided
         return (int) (calories * (fatPercent/100)) / 9 ;
     }
 
+
+    public static int calcCalorieIntake(int age, double weight, double height, boolean isImperial, boolean isMale, int activitylevelIndex, int goalIndex) {
+        double calories, bmr;
+
+        if (isImperial) {
+            weight = weight / 2.2046226218;
+            height = height * 2.54;
+        }
+        if (isMale)
+            bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+        else
+            bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+
+        calories = bmr * (1.2 + (.175 * activitylevelIndex));
+        calories = (calories + ((goalIndex - 2) * 250));
+        return (calories > 1000) ? (int) calories : 1000;
+    }
 
 }

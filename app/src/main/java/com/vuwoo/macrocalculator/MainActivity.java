@@ -1,11 +1,10 @@
 package com.vuwoo.macrocalculator;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
+import android.app.FragmentManager;
 import android.os.Bundle;
-import android.view.MotionEvent;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,9 +12,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+public class MainActivity extends AppCompatActivity implements FindCaloriesDialog.Communicator {
 
-public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         changeCarbsSeekBarValue();
         changeProteinSeekBarValue();
         changeFatsSeekBarValue();
@@ -164,12 +161,19 @@ public class MainActivity extends AppCompatActivity {
         double fPercent = Double.parseDouble(fatPercent.getText().toString().replace("%",""));
         int cals = 0;
 
-        if (calsStr == null || calsStr.isEmpty())
+        if (calsStr.isEmpty())
             Toast.makeText(this,"Please enter a valid number to calculate.",Toast.LENGTH_SHORT).show();
         else
             cals = Integer.parseInt(calsStr);
         showTotalGrams(Utilities.calculcateCarbs(cals, cPercent), Utilities.calculcateProtein(cals, pPercent),
                 Utilities.calculcateFat(cals, fPercent));
+
+    }
+
+    public void dontKnowButton(View view) {
+        FragmentManager manager = getFragmentManager();
+        FindCaloriesDialog findCalories = new FindCaloriesDialog();
+        findCalories.show(manager, "FindCalories");
 
     }
 
@@ -183,4 +187,12 @@ public class MainActivity extends AppCompatActivity {
         proteinGrams.setText(Integer.toString(proteins));
         fatGrams.setText(Integer.toString(fats));
     }
+
+    @Override
+    public void sendCalories(String recommendedCalories) {
+        EditText calories = (EditText) findViewById(R.id.calories_needed);
+        calories.setText(recommendedCalories);
+
+    }
+
 }
