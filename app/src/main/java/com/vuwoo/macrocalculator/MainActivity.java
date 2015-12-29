@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -164,12 +165,13 @@ public class MainActivity extends AppCompatActivity implements FindCaloriesDialo
 
         if (calsStr.isEmpty())
             Toast.makeText(this,"Please enter a valid number to calculate.",Toast.LENGTH_SHORT).show();
-        else
+        else {
             cals = Integer.parseInt(calsStr);
-        makeVisibleAgain();
-        showTotalGrams(Utilities.calculcateCarbs(cals, cPercent), Utilities.calculcateProtein(cals, pPercent),
-                Utilities.calculcateFat(cals, fPercent));
-
+            makeVisibleAgain();
+            showTotalGrams(Utilities.calculcateCarbs(cals, cPercent), Utilities.calculcateProtein(cals, pPercent),
+                    Utilities.calculcateFat(cals, fPercent));
+        }
+        hideKeyboard(view);
     }
 
     public void dontKnowButton(View view) {
@@ -186,7 +188,9 @@ public class MainActivity extends AppCompatActivity implements FindCaloriesDialo
         TextView carbsCalc = (TextView) findViewById(R.id.carbs_calculated_text_view);
         TextView proteinsCalc = (TextView) findViewById(R.id.protein_calculated_text_view);
         TextView fatsCalc = (TextView) findViewById(R.id.fat_calculated_text_view);
+        ImageView logo = (ImageView) findViewById(R.id.logo);
 
+        logo.setVisibility(View.GONE);
         carbGrams.setVisibility(View.GONE);
         proteinGrams.setVisibility(View.GONE);
         fatGrams.setVisibility(View.GONE);
@@ -204,7 +208,9 @@ public class MainActivity extends AppCompatActivity implements FindCaloriesDialo
         TextView proteinsCalc = (TextView) findViewById(R.id.protein_calculated_text_view);
         TextView fatsCalc = (TextView) findViewById(R.id.fat_calculated_text_view);
         TextView carbsCalc = (TextView) findViewById(R.id.carbs_calculated_text_view);
+        ImageView logo = (ImageView) findViewById(R.id.logo);
 
+        logo.setVisibility(View.VISIBLE);
         carbGrams.setVisibility(View.VISIBLE);
         proteinGrams.setVisibility(View.VISIBLE);
         fatGrams.setVisibility(View.VISIBLE);

@@ -25,6 +25,7 @@
 
             <RadioButton
                 android:id="@+id/US_radio_button"
+                style="@style/TextColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -32,6 +33,7 @@
 
             <RadioButton
                 android:id="@+id/metric_radio_button"
+                style="@style/TextColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -43,6 +45,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                style="@style/TextColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -52,6 +55,7 @@
 
             <Spinner
                 android:id="@+id/gender_spinner"
+                style="@style/SpinnerCustomTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -63,6 +67,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                style="@style/TextColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -75,6 +80,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/edittextborder"
+                android:gravity="center_horizontal"
                 android:inputType="number"
                 android:maxLength="3" />
         </LinearLayout>
@@ -85,6 +92,7 @@
 
             <TextView
                 android:id="@+id/weight_text_view"
+                style="@style/TextColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -93,10 +101,13 @@
                 android:textSize="20sp" />
 
             <EditText
+
                 android:id="@+id/weight_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/edittextborder"
+                android:gravity="center_horizontal"
                 android:inputType="number"
                 android:maxLength="3" />
         </LinearLayout>
@@ -107,6 +118,7 @@
 
             <TextView
                 android:id="@+id/height_text_view"
+                style="@style/TextColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -119,11 +131,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/edittextborder"
+                android:gravity="center_horizontal"
                 android:inputType="number"
                 android:maxLength="3" />
         </LinearLayout>
 
         <TextView
+            style="@style/TextColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -133,6 +148,7 @@
 
         <Spinner
             android:id="@+id/activity_level_spinner"
+            style="@style/SpinnerCustomTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -141,6 +157,7 @@
         </Spinner>
 
         <TextView
+            style="@style/TextColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -150,6 +167,7 @@
 
         <Spinner
             android:id="@+id/goal_spinner"
+            style="@style/SpinnerCustomTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -159,6 +177,7 @@
 
         <Button
             android:id="@+id/calories_dialog_button"
+            style="@style/ButtonCustomTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -168,6 +187,7 @@
             />
 
         <TextView
+            style="@style/TextColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -191,6 +211,7 @@
 
             <Button
                 android:id="@+id/use_value_button"
+                style="@style/ButtonCustomTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -202,6 +223,7 @@
 
         <TextView
             android:id="@+id/minimum_calc_text_view"
+            style="@style/TextColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

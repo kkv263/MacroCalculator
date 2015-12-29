@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">MacroCalculator</string>
     <!--activity_main strings listed here-->
-    <string name="presets">Presets</string>
+    <string name="presets">Select a Preset</string>
     <string name="preset_button_highCarbs">60/25/15\nHigh Carbs</string>
     <string name="preset_button_moderate">50/30/20\nModerate</string>
     <string name="preset_button_lowCarbs">20/40/40\nLow Carbs</string>
+    <string name="customize">Or Customize...</string>
     <string name="carbohydrates_label">Carbohydrates:</string>
     <string name="protein_label">Proteins:</string>
     <string name="fat_label">Fats:</string>

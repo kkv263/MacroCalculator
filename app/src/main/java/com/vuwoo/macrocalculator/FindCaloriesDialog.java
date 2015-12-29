@@ -2,7 +2,9 @@ package com.vuwoo.macrocalculator;
 
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +36,9 @@ public class FindCaloriesDialog extends DialogFragment implements View.OnClickLi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         getDialog().setTitle("Your Daily Calorie Intake");
-        View view = inflater.inflate(R.layout.find_calories, null);
+        final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.AppTheme);
+        LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
+        View view = localInflater.inflate(R.layout.find_calories, container, false);
 
         final RadioGroup measurement = (RadioGroup) view.findViewById(R.id.measurement_radio_group);
         RadioButton us = (RadioButton) view.findViewById(R.id.US_radio_button);
