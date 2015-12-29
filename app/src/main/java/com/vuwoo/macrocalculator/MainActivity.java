@@ -13,6 +13,10 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
+
 public class MainActivity extends AppCompatActivity implements FindCaloriesDialog.Communicator {
 
 
@@ -20,14 +24,16 @@ public class MainActivity extends AppCompatActivity implements FindCaloriesDialo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         hideOnCreate();
         EditText calories = (EditText) findViewById(R.id.calories_needed);
         calories.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
+                if (!hasFocus)
                     hideKeyboard(v);
-                }
             }
         });
         changeCarbsSeekBarValue();

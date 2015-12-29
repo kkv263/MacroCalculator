@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">MacroCalculator</string>
+    <string name="banner_ad_unit_id">ca-app-pub-5594132048305549/7069605513</string>
+
     <!--activity_main strings listed here-->
     <string name="presets">Select a Preset</string>
     <string name="preset_button_highCarbs">60/25/15\nHigh Carbs</string>
